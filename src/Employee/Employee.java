@@ -1,8 +1,8 @@
 package Employee;
 
-public class Employee implements IEmployee {
+public abstract class Employee implements IEmployee {
 
-    int paymentPerHour = 20;
+    int paymentPerHour;
 
     String name;
 
@@ -27,10 +27,6 @@ public class Employee implements IEmployee {
         this.paymentPerHour = paymentPerHour;
     }
 
-    @Override
-    public int calculateSalary() {
-        return 0;
-    }
 
     @Override
     public String getName() {
