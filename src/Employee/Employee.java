@@ -4,16 +4,15 @@ public abstract class Employee implements IEmployee {
 
     int paymentPerHour;
 
-    String name;
 
-    public void getName(String name){
-        this.name = name;
-    }
+    String name;
 
     public void setName(String name) {
         this.name = name;
     }
-
+    public String getName() {
+        return name;
+    }
     public int getPaymentPerHour() {
         return paymentPerHour;
     }
@@ -27,9 +26,4 @@ public abstract class Employee implements IEmployee {
         this.paymentPerHour = paymentPerHour;
     }
 
-
-    @Override
-    public String getName() {
-        return null;
-    }
 }
