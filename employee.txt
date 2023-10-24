@@ -1,0 +1,10 @@
+Ryan 8 64
+James 8 64
+Mike 8 64
+Jake 8 64
+Hannah 8 64
+Sophia 8 8
+Christ 8 96
+Rose 8 80
+Timmy 8 88
+Tyson 8 16

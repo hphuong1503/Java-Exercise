@@ -1,4 +1,4 @@
-package Employee;
+package employee;
 
 public class PartTimeEmployee extends Employee {
 
@@ -9,6 +9,11 @@ public class PartTimeEmployee extends Employee {
     }
 
     public void setWorkingHours(int workingHours) {
+        this.workingHours = workingHours;
+    }
+
+    public PartTimeEmployee(String name, Gender gender, int paymentPerHour, int workingHours) {
+        super(name, gender, paymentPerHour);
         this.workingHours = workingHours;
     }
 
