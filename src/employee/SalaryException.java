@@ -1,5 +1,5 @@
 package employee;
 
-public class SalaryException extends RuntimeException{
+public class SalaryException extends InputEmployeeException{
 
 }

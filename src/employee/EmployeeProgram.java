@@ -175,31 +175,37 @@ public class EmployeeProgram {
         System.out.println("2: Add part time employee");
         switch (scanner.nextInt()) {
             case 1:
-                System.out.println("Nhap ten Employee: ");
-                name = scanner.next();
                 try{
-                pay = inputSalary();
+                    name = inputName();
+                    pay = inputSalary();
+
+                    employee = new FullTimeEmployee(name, pay);
+                    employeeList[numOfEmployee] = employee;
+
                 } catch (SalaryException e){
                     e.printStackTrace();
                     pay = 10;
                 }
-                employee = new FullTimeEmployee(name, pay);
-                employeeList[numOfEmployee] = employee;
+                catch (NameException e){
+                    e.printStackTrace();
+                }
                 return true;
 
             case 2:
-                System.out.println("Nhap ten Employee: ");
-                name = scanner.next();
                 try{
+                    name = inputName();
+                    System.out.println("Nhap tong gio luong viec");
                     pay = inputSalary();
+                    workingHours = scanner.nextInt();
+                    employee = new PartTimeEmployee(name, pay, workingHours);
+                    employeeList[numOfEmployee] = employee;
+
+                } catch (NameException e){
+                    e.printStackTrace();
                 } catch (SalaryException e){
                     e.printStackTrace();
                     pay = 10;
                 }
-                System.out.println("Nhap tong gio luong viec");
-                workingHours = scanner.nextInt();
-                employee = new PartTimeEmployee(name, pay, workingHours);
-                employeeList[numOfEmployee] = employee;
                 return true;
         }
         return false;
@@ -249,6 +255,21 @@ public class EmployeeProgram {
             throw new SalaryException();
         }
         return pay;
+    }
+
+    public static String inputName(){
+        String name;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhap ten nhan vien: ");
+        name = scanner.next();
+        for (int i= 0; i<name.length(); i++){
+            if((name.charAt(i)>='a' && name.charAt(i)<='z') || (name.charAt(i)>='A' && name.charAt(i)<='Z')){
+
+            }else {
+                throw new NameException();
+            }
+        }
+        return name;
     }
 
 }

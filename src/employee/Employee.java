@@ -5,6 +5,7 @@ public abstract class Employee implements IEmployee {
     int paymentPerHour;
 
     Gender gender;
+
     String name;
 
     public Gender getGender() {
